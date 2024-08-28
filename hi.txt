@@ -1,0 +1,39 @@
+AWS provides two main ways to monitor Lambda functions: Default Monitoring (through CloudWatch) and Lambda Insights. Both offer valuable insights, but they differ in the level of detail and functionality they provide.
+
+1. Default Monitoring with CloudWatch
+Overview:
+
+CloudWatch Metrics: By default, AWS Lambda publishes several key metrics to CloudWatch for every function invocation. These include:
+Invocations: The number of times your function is invoked.
+Duration: The time it takes for your function to execute.
+Errors: The number of errors that occurred during function execution.
+Throttles: The number of times your function was throttled due to hitting the concurrency limit.
+Concurrent Executions: The number of functions executing at the same time.
+IteratorAge: For stream-based invocations (e.g., Kinesis, DynamoDB Streams), this tracks the age of the last record processed.
+Key Characteristics:
+
+Basic Monitoring: Provides fundamental operational metrics that help you understand the health and performance of your Lambda functions.
+No Extra Cost: These basic metrics are available at no additional cost beyond what you pay for CloudWatch usage.
+Limited Detail: While useful, the metrics are relatively high-level and may not provide detailed insights into function performance or the underlying infrastructure.
+2. AWS Lambda Insights
+Overview:
+
+Enhanced Monitoring: AWS Lambda Insights provides deeper operational insights and performance monitoring for Lambda functions. It goes beyond the basic metrics to offer detailed observability into Lambda performance.
+Key Features:
+
+In-depth Performance Metrics: Includes metrics such as CPU and memory usage, disk I/O, network I/O, and cold start duration.
+Application Tracing: Offers end-to-end tracing of requests across multiple services, helping you diagnose performance bottlenecks.
+Infrastructure Metrics: Provides insights into the underlying infrastructure that supports your Lambda function, including the runtime environment.
+Automatic Dashboards: Lambda Insights automatically creates CloudWatch dashboards with visualizations for these metrics, making it easier to monitor and analyze function performance.
+Anomalies Detection: It integrates with CloudWatch to detect anomalies in function behavior, which helps in identifying and addressing issues more proactively.
+Key Characteristics:
+
+Granular Data: Offers a more detailed view of your Lambda function's performance, including insights into resource usage and execution environment.
+Cost: Lambda Insights comes with an additional cost, which is based on the number of invocations and the amount of telemetry data collected.
+Ideal for Troubleshooting: Best suited for scenarios where you need detailed insights to diagnose performance issues or optimize function behavior.
+Summary of Differences
+Detail Level: Default monitoring provides basic, high-level metrics, while Lambda Insights offers granular, in-depth metrics.
+Scope: Default monitoring focuses on function-level metrics, whereas Lambda Insights also provides infrastructure-level metrics and application tracing.
+Cost: Default monitoring is included with CloudWatch at no additional cost, while Lambda Insights incurs additional charges.
+Use Cases: Default monitoring is suitable for basic operational monitoring, while Lambda Insights is ideal for troubleshooting, performance optimization, and detailed observability.
+Choosing between them depends on your specific needs. If you need deep visibility and are willing to incur additional costs, Lambda Insights is the better choice. For basic monitoring and operational checks, default CloudWatch monitoring may suffice.
