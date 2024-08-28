@@ -37,3 +37,9 @@ Scope: Default monitoring focuses on function-level metrics, whereas Lambda Insi
 Cost: Default monitoring is included with CloudWatch at no additional cost, while Lambda Insights incurs additional charges.
 Use Cases: Default monitoring is suitable for basic operational monitoring, while Lambda Insights is ideal for troubleshooting, performance optimization, and detailed observability.
 Choosing between them depends on your specific needs. If you need deep visibility and are willing to incur additional costs, Lambda Insights is the better choice. For basic monitoring and operational checks, default CloudWatch monitoring may suffice.
+
+AWS X-Ray (X-Tracing)
+AWS X-Ray provides detailed, end-to-end tracing of requests as they travel through your application, including AWS Lambda functions and other AWS services. It helps you visualize the flow of requests, identify performance bottlenecks, and troubleshoot errors by capturing data on how requests interact with various services. X-Ray is ideal for understanding the behavior and latency of distributed applications.
+
+AWS Lambda Insights
+AWS Lambda Insights offers deep operational monitoring of your Lambda functions, providing metrics on resource usage (e.g., CPU, memory), execution times, and performance anomalies. It helps you optimize the performance and cost-efficiency of your Lambda functions by providing a clear view of how they are performing under different workloads. Lambda Insights is particularly useful for monitoring and improving the health and efficiency of individual Lambda functions.
